@@ -30,7 +30,7 @@ public class FortuneService {
 		long randomId = randomIds.findAny().getAsLong();
 
 		logger.debug("Getting fortune with random id={}", randomId);
-		fortune = fortuneRepo.getOne(randomId);
+		fortune = fortuneRepo.findOne(randomId);
 		logger.debug("Got {}", fortune.toString());
 
 		return fortune.getText();
@@ -39,7 +39,7 @@ public class FortuneService {
 
 	public String getDefaultFortune(){
 		logger.debug("Default fortune used");
-		return "Loan defaults = bad :( -- Fortune defaults = GOOD! :)";
+		return "The fortuneteller will be back soon.";
 	}
 
 }
