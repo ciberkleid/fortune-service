@@ -16,7 +16,7 @@ public class FortuneController {
 	
 	@RequestMapping("/")
 	String getQuote(){
-		logger.debug("fetching fortune.");
+		logger.debug("Fetching fortune");
 		return fortuneService.getFortune();
 	}
 		
