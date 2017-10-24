@@ -7,3 +7,4 @@ applications:
   - config-server
   - cloud-bus
   - service-registry
+  - circuit-breaker-dashboard
