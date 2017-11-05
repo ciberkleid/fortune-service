@@ -1,0 +1,60 @@
+# This file describes which services are required by this application
+# in order for the smoke tests on the TEST environment and end to end tests
+# on the STAGE environment to pass
+
+# lowercase name of the environment
+test:
+  # list of required services
+  services:
+    - type: service-broker
+      name: config-server
+      coordinates: p-config-server:standard
+#      git_uri: https://github.com/ciberkleid/app-config
+    - type: rabbitmq
+      name: cloud-bus
+    - type: service-broker
+      name: service-registry
+      coordinates: p-service-registry:standard
+    - type: service-broker
+      name: circuit-breaker-dashboard
+      coordinates: p-circuit-breaker-dashboard:standard
+    - type: mysql
+      name: fortune-db
+#    - type: stubrunner
+#      name: stubrunner-github-webhook
+#      coordinates: com.example.github:github-analytics-stub-runner-boot-classpath-stubs:0.0.1.M1
+#      useClasspath: true
+
+stage:
+  services:
+    - type: service-broker
+      name: config-server
+      coordinates: p-config-server:standard
+#      git_uri: https://github.com/ciberkleid/app-config
+    - type: rabbitmq
+      name: cloud-bus
+    - type: service-broker
+      name: service-registry
+      coordinates: p-service-registry:standard
+    - type: service-broker
+      name: circuit-breaker-dashboard
+      coordinates: p-circuit-breaker-dashboard:standard
+    - type: mysql
+      name: fortune-db
+
+prod:
+  services:
+    - type: service-broker
+      name: config-server
+      coordinates: p-config-server:standard
+#      git_uri: https://github.com/ciberkleid/app-config
+    - type: rabbitmq
+      name: cloud-bus
+    - type: service-broker
+      name: service-registry
+      coordinates: p-service-registry:standard
+    - type: service-broker
+      name: circuit-breaker-dashboard
+      coordinates: p-circuit-breaker-dashboard:standard
+    - type: mysql
+      name: fortune-db
