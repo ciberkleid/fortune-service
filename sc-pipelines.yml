@@ -24,10 +24,6 @@ test:
       type: brokered
       broker: p-service-registry
       plan: standard
-    - name: config-server
-      type: brokered
-      broker: p-config-server
-      plan: standard
     - name: circuit-breaker-dashboard
       type: brokered
       broker: p-circuit-breaker-dashboard
@@ -57,10 +53,6 @@ stage:
       type: brokered
       broker: p-service-registry
       plan: standard
-    - name: config-server
-      type: brokered
-      broker: p-config-server
-      plan: standard
     - name: circuit-breaker-dashboard
       type: brokered
       broker: p-circuit-breaker-dashboard
@@ -85,10 +77,6 @@ prod:
     - name: service-registry
       type: brokered
       broker: p-service-registry
-      plan: standard
-    - name: config-server
-      type: brokered
-      broker: p-config-server
       plan: standard
     - name: circuit-breaker-dashboard
       type: brokered
