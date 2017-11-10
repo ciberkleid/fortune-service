@@ -6,20 +6,32 @@
 test:
   # list of required services
   services:
-    - type: service-broker
-      name: config-server
-      coordinates: p-config-server:standard
-#      git_uri: https://github.com/ciberkleid/app-config
-    - type: rabbitmq
-      name: cloud-bus
-    - type: service-broker
-      name: service-registry
-      coordinates: p-service-registry:standard
-    - type: service-broker
-      name: circuit-breaker-dashboard
-      coordinates: p-circuit-breaker-dashboard:standard
-    - type: mysql
-      name: fortune-db
+    - name: fortune-db
+      type: brokered
+      broker: cleardb
+      plan: spark
+    - name: config-server
+      type: brokered
+      broker: p-config-server
+      plan: standard
+      params:
+        git_uri: https://github.com/ciberkleid/app-config
+    - name: cloud-bus
+      type: brokered
+      broker: cloudamqp
+      plan: lemur
+    - name: service-registry
+      type: brokered
+      broker: p-service-registry
+      plan: standard
+    - name: config-server
+      type: brokered
+      broker: p-config-server
+      plan: standard
+    - name: circuit-breaker-dashboard
+      type: brokered
+      broker: p-circuit-breaker-dashboard
+      plan: standard
 #    - type: stubrunner
 #      name: stubrunner-github-webhook
 #      coordinates: com.example.github:github-analytics-stub-runner-boot-classpath-stubs:0.0.1.M1
@@ -27,34 +39,58 @@ test:
 
 stage:
   services:
-    - type: service-broker
-      name: config-server
-      coordinates: p-config-server:standard
-#      git_uri: https://github.com/ciberkleid/app-config
-    - type: rabbitmq
-      name: cloud-bus
-    - type: service-broker
-      name: service-registry
-      coordinates: p-service-registry:standard
-    - type: service-broker
-      name: circuit-breaker-dashboard
-      coordinates: p-circuit-breaker-dashboard:standard
-    - type: mysql
-      name: fortune-db
+    - name: fortune-db
+      type: brokered
+      broker: cleardb
+      plan: spark
+    - name: config-server
+      type: brokered
+      broker: p-config-server
+      plan: standard
+      params:
+        git_uri: https://github.com/ciberkleid/app-config
+    - name: cloud-bus
+      type: brokered
+      broker: cloudamqp
+      plan: lemur
+    - name: service-registry
+      type: brokered
+      broker: p-service-registry
+      plan: standard
+    - name: config-server
+      type: brokered
+      broker: p-config-server
+      plan: standard
+    - name: circuit-breaker-dashboard
+      type: brokered
+      broker: p-circuit-breaker-dashboard
+      plan: standard
 
 prod:
   services:
-    - type: service-broker
-      name: config-server
-      coordinates: p-config-server:standard
-#      git_uri: https://github.com/ciberkleid/app-config
-    - type: rabbitmq
-      name: cloud-bus
-    - type: service-broker
-      name: service-registry
-      coordinates: p-service-registry:standard
-    - type: service-broker
-      name: circuit-breaker-dashboard
-      coordinates: p-circuit-breaker-dashboard:standard
-    - type: mysql
-      name: fortune-db
+    - name: fortune-db
+      type: brokered
+      broker: cleardb
+      plan: spark
+    - name: config-server
+      type: brokered
+      broker: p-config-server
+      plan: standard
+      params:
+        git_uri: https://github.com/ciberkleid/app-config
+    - name: cloud-bus
+      type: brokered
+      broker: cloudamqp
+      plan: lemur
+    - name: service-registry
+      type: brokered
+      broker: p-service-registry
+      plan: standard
+    - name: config-server
+      type: brokered
+      broker: p-config-server
+      plan: standard
+    - name: circuit-breaker-dashboard
+      type: brokered
+      broker: p-circuit-breaker-dashboard
+      plan: standard
