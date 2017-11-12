@@ -15,7 +15,8 @@ test:
       broker: p-config-server
       plan: standard
       params:
-        git_uri: https://github.com/ciberkleid/app-config
+        git:
+          uri: https://github.com/ciberkleid/app-config
     - name: cloud-bus
       type: brokered
       broker: cloudamqp
@@ -44,7 +45,8 @@ stage:
       broker: p-config-server
       plan: standard
       params:
-        git_uri: https://github.com/ciberkleid/app-config
+        git:
+          uri: https://github.com/ciberkleid/app-config
     - name: cloud-bus
       type: brokered
       broker: cloudamqp
