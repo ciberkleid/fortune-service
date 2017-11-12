@@ -57,28 +57,3 @@ stage:
       type: brokered
       broker: p-circuit-breaker-dashboard
       plan: standard
-
-prod:
-  services:
-    - name: fortune-db
-      type: brokered
-      broker: cleardb
-      plan: spark
-    - name: config-server
-      type: brokered
-      broker: p-config-server
-      plan: standard
-      params:
-        git_uri: https://github.com/ciberkleid/app-config
-    - name: cloud-bus
-      type: brokered
-      broker: cloudamqp
-      plan: lemur
-    - name: service-registry
-      type: brokered
-      broker: p-service-registry
-      plan: standard
-    - name: circuit-breaker-dashboard
-      type: brokered
-      broker: p-circuit-breaker-dashboard
-      plan: standard
