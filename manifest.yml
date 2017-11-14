@@ -1,11 +1,18 @@
 ---
 applications:
 - name: fortune-service
-  random-route: true
+  memory: 1024M
+  instances: 3
   path: ./target/fortune-service-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git#v3.8.1
+  host: fortune-service
+  random-route: true
   services:
+  - fortune-db
   - config-server
   - cloud-bus
   - service-registry
   - circuit-breaker-dashboard
-  - fortune-db
+  env:
+    SPRING_PROFILES_ACTIVE: c2c
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
