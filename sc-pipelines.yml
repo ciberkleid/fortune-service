@@ -46,7 +46,7 @@ stage:
       plan: standard
       params:
         git:
-          uri: https://github.com/ciberkleid/app-config
+          uri: https://bitbucket.com/ciberkleid/app-config
     - name: cloud-bus
       type: brokered
       broker: cloudamqp
