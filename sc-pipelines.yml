@@ -7,26 +7,26 @@ test:
   # list of required services
   services:
     - name: fortune-db
-      type: brokered
+      type: broker
       broker: cleardb
       plan: spark
     - name: config-server
-      type: brokered
+      type: broker
       broker: p-config-server
       plan: standard
       params:
         git:
           uri: https://github.com/ciberkleid/app-config
     - name: cloud-bus
-      type: brokered
+      type: broker
       broker: cloudamqp
       plan: lemur
     - name: service-registry
-      type: brokered
+      type: broker
       broker: p-service-registry
       plan: standard
     - name: circuit-breaker-dashboard
-      type: brokered
+      type: broker
       broker: p-circuit-breaker-dashboard
       plan: standard
 #    - type: stubrunner
@@ -37,25 +37,25 @@ test:
 stage:
   services:
     - name: fortune-db
-      type: brokered
+      type: broker
       broker: cleardb
       plan: spark
     - name: config-server
-      type: brokered
+      type: broker
       broker: p-config-server
       plan: standard
       params:
         git:
           uri: https://github.com/ciberkleid/app-config
     - name: cloud-bus
-      type: brokered
+      type: broker
       broker: cloudamqp
       plan: lemur
     - name: service-registry
-      type: brokered
+      type: broker
       broker: p-service-registry
       plan: standard
     - name: circuit-breaker-dashboard
-      type: brokered
+      type: broker
       broker: p-circuit-breaker-dashboard
       plan: standard
