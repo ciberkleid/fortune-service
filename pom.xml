@@ -23,8 +23,9 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <spring-cloud-services.version>1.5.0.RELEASE</spring-cloud-services.version>
-    <spring-cloud.version>Dalston.SR2</spring-cloud.version>
+    <spring-cloud.version>Dalston.SR4</spring-cloud.version>
     <maven-surefire.version>2.20</maven-surefire.version>
+    <spring-cloud-contract.version>1.1.4.RELEASE</spring-cloud-contract.version>
     <!--&lt;!&ndash; [PIPELINE] &ndash;&gt;-->
     <!--<distribution.management.release.id>artifactory-local</distribution.management.release.id>-->
     <!--&lt;!&ndash; [PIPELINE] &ndash;&gt;-->
@@ -83,6 +84,11 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-contract-verifier</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -160,16 +166,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
           </plugin>
-          <!--<plugin>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-contract-maven-plugin</artifactId>-->
-            <!--<version>${spring-cloud-contract.version}</version>-->
-            <!--<extensions>true</extensions>-->
-            <!--<configuration>-->
-              <!--<baseClassForTests>com.example.contract.BaseClass</baseClassForTests>-->
-              <!--<basePackageForTests>com.example.contracttests</basePackageForTests>-->
-            <!--</configuration>-->
-          <!--</plugin>-->
+          <plugin>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+            <version>${spring-cloud-contract.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+              <baseClassForTests>io.pivotal.fortune.BaseClass</baseClassForTests>
+              <basePackageForTests>io.pivotal.fortune.contracttests</basePackageForTests>
+            </configuration>
+          </plugin>
         </plugins>
       </build>
     </profile>
@@ -193,24 +199,6 @@
                 <skip>true</skip>
             </configuration>
           </plugin>
-          <!--<plugin>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-contract-maven-plugin</artifactId>-->
-            <!--<version>${spring-cloud-contract.version}</version>-->
-            <!--<extensions>true</extensions>-->
-            <!--<configuration>-->
-              <!--<contractsRepositoryUrl>${repo.with.binaries}</contractsRepositoryUrl>-->
-              <!--<contractDependency>-->
-                <!--<groupId>${project.groupId}</groupId>-->
-                <!--<artifactId>${project.artifactId}</artifactId>-->
-                <!--<classifier>stubs</classifier>-->
-                <!--<version>${latest.production.version}</version>-->
-              <!--</contractDependency>-->
-              <!--<contractsPath>/</contractsPath>-->
-              <!--<baseClassForTests>com.example.contract.BaseClass</baseClassForTests>-->
-              <!--<basePackageForTests>com.example.contracttests</basePackageForTests>-->
-            <!--</configuration>-->
-          <!--</plugin>-->
           <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
             <executions>
