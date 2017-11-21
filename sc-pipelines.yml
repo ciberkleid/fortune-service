@@ -10,6 +10,7 @@ test:
       type: broker
       broker: cleardb
       plan: spark
+      useExisting: true
     - name: config-server
       type: broker
       broker: p-config-server
@@ -22,6 +23,7 @@ test:
       type: broker
       broker: cloudamqp
       plan: lemur
+      useExisting: true
     - name: service-registry
       type: broker
       broker: p-service-registry
