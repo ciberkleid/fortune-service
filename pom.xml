@@ -26,15 +26,10 @@
     <spring-cloud.version>Dalston.SR4</spring-cloud.version>
     <maven-surefire.version>2.20</maven-surefire.version>
     <spring-cloud-contract.version>1.1.4.RELEASE</spring-cloud-contract.version>
-    <!--&lt;!&ndash; [PIPELINE] &ndash;&gt;-->
+    <!-- [PIPELINE] -->
     <!--<distribution.management.release.id>artifactory-local</distribution.management.release.id>-->
-    <!--&lt;!&ndash; [PIPELINE] &ndash;&gt;-->
-    <!--<distribution.management.snapshot.url>http://localhost:8081/artifactory/libs-snapshot-local</distribution.management.snapshot.url>-->
     <!--<distribution.management.release.url>http://localhost:8081/artifactory/libs-release-local</distribution.management.release.url>-->
-    <!-- [PIPELINE] -->
     <distribution.management.release.id>bintray</distribution.management.release.id>
-    <!-- [PIPELINE] -->
-    <distribution.management.snapshot.url>https://api.bintray.com/maven/ciberkleid/maven-repo/fortune-service</distribution.management.snapshot.url>
     <distribution.management.release.url>https://api.bintray.com/maven/ciberkleid/maven-repo/fortune-service</distribution.management.release.url>
   </properties>
 
@@ -120,14 +115,8 @@
   <distributionManagement>
     <repository>
       <id>${distribution.management.release.id}</id>
-      <name>Spring Milestone Repository</name>
       <url>${distribution.management.release.url}</url>
     </repository>
-    <snapshotRepository>
-      <id>${distribution.management.release.id}</id>
-      <name>Spring Snapshot Repository</name>
-      <url>${distribution.management.snapshot.url}</url>
-    </snapshotRepository>
   </distributionManagement>
 
   <build>
