@@ -8,3 +8,4 @@ applications:
   - cloud-bus
   - service-registry
   - circuit-breaker-dashboard
+  - fortune-db
