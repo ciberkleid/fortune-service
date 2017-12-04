@@ -14,26 +14,30 @@ import org.springframework.web.client.RestTemplate;
  * @author Marcin Grzejszczak
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = IntegrationTests.class,
+@SpringBootTest(classes = SmokeTests.class,
         webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @EnableAutoConfiguration
-public class IntegrationTests {
+public class SmokeTests {
 
 	@Value("${application.url}") String applicationUrl;
 
 	RestTemplate restTemplate = new RestTemplate();
 
 	@Test
-	public void should_return_a_foo_fortune() {
+	public void should_return_a_fortune() {
 		ResponseEntity<String> response = this.restTemplate
 				.getForEntity("http://" + this.applicationUrl + "/", String.class);
 
 		BDDAssertions.then(response.getStatusCodeValue()).isEqualTo(200);
 
-		// Filter out the known Hystrix fallback responses
+		// Filter out the known Hystrix fallback response
 		BDDAssertions.then(response.getBody()).doesNotContain("The fortuneteller will be back soon.");
 	}
 
 }
+
+
+
+
 
 

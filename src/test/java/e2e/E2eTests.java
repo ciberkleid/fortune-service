@@ -21,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableAutoConfiguration
 public class E2eTests {
 
+
 	// The app is running in CF but the tests are executed from Concourse worker,
 	// so the tests cannot retrieve the greeting-ui URL
 	// We will assume same host and replace app name
@@ -41,7 +42,7 @@ public class E2eTests {
 		logger.info("Response: [{}]", response);
 		BDDAssertions.then(response.getStatusCodeValue()).isEqualTo(200);
 
-		// Filter out the known Hystrix fallback responses
+		// Filter out the known Hystrix fallback responses from both fortune and greeting
 		BDDAssertions.then(response.getBody()).doesNotContain("The fortuneteller will be back soon.").doesNotContain("This fortune is no good. Try another.");
 	}
 

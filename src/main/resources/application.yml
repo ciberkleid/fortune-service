@@ -5,6 +5,7 @@ security:
 management:
   security:
     enabled: false
+
 spring:
   jpa:
     hibernate:
