@@ -5,3 +5,8 @@ security:
 management:
   security:
     enabled: false
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: MYSQL
