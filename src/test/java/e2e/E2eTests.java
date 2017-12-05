@@ -43,7 +43,7 @@ public class E2eTests {
 		BDDAssertions.then(response.getStatusCodeValue()).isEqualTo(200);
 
 		// Filter out the known Hystrix fallback responses from both fortune and greeting
-		BDDAssertions.then(response.getBody()).doesNotContain("The fortuneteller will be back soon.").doesNotContain("This fortune is no good. Try another.");
+		BDDAssertions.then(response.getBody()).doesNotContain("This fortune is no good. Try another.").doesNotContain("The fortuneteller will be back soon.");
 	}
 
 }
