@@ -12,9 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author Marcin Grzejszczak
- */
+import javax.ws.rs.HEAD;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = E2eTests.class,
 		webEnvironment = SpringBootTest.WebEnvironment.NONE)
@@ -23,9 +22,8 @@ public class E2eTests {
 
 
 	// The app is running in CF but the tests are executed from Concourse worker,
-	// so the tests cannot retrieve the greeting-ui URL
-	// We will assume same host and replace app name
-	// (not compatible with c2c)
+	// so the test will deduce the url to greeting-ui: it will assume the same host
+	// as fortune-service, and simply replace "fortune-service" with "greeting-ui" in the url
 
 	Logger logger = LoggerFactory
 			.getLogger(E2eTests.class);
@@ -47,6 +45,3 @@ public class E2eTests {
 	}
 
 }
-
-
-
