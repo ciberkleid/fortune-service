@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class FortuneController {
 	Logger logger = LoggerFactory
 			.getLogger(FortuneController.class);
-
+	
 	private final FortuneService fortuneService;
 
 	public FortuneController(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
-
+	
 	@RequestMapping("/")
 	String getQuote(){
 		logger.debug("Fetching fortune");
