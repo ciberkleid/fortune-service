@@ -10,7 +10,8 @@ test:
       type: broker
       broker: cleardb
       plan: spark
-      useExisting: true
+      # set useExisting to false to test flyway integration
+      useExisting: false
     - name: config-server
       type: broker
       broker: p-config-server
