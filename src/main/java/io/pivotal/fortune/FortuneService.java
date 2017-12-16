@@ -1,8 +1,5 @@
 package io.pivotal.fortune;
 
-import java.util.Random;
-import java.util.stream.LongStream;
-
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,21 +18,10 @@ public class FortuneService {
 	@HystrixCommand(fallbackMethod = "getDefaultFortune")
 	public String getFortune(){
 
-		Fortune fortune = null;
-		long numFortunes = fortuneRepo.count();
-		logger.debug("There are {} possible fortunes", numFortunes);
-
-		Random random = new Random();
-		LongStream randomIds = random.longs(1,1,numFortunes+1);
-		long randomId = randomIds.findAny().getAsLong();
-
-		logger.debug("Getting fortune with random id={}", randomId);
-		fortune = fortuneRepo.findOne(randomId);
+		Fortune fortune = fortuneRepo.findRandomFortune();
 		logger.debug("Got {}", fortune.toString());
-
 		return fortune.getText();
 	}
-
 
 	public String getDefaultFortune(){
 		logger.debug("Default fortune used");
