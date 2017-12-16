@@ -9,5 +9,18 @@ management:
 spring:
   jpa:
     hibernate:
-      ddl-auto: none
-    database: MYSQL
+      ddl-auto: validate
+#    database: MYSQL
+
+logging:
+  level:
+    root: INFO
+    io:
+      pivotal: DEBUG
+    com:
+      netflix: OFF
+    org:
+      flywaydb: DEBUG
+#        core.internal:
+#          dbsupport.SqlScript: DEBUG # SQL only
+#          command.DbMigrate: DEBUG
