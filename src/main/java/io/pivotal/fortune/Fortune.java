@@ -1,21 +1,17 @@
 package io.pivotal.fortune;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Fortune {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String text;
-
-    public Fortune(Long id, String text) {
-        super();
-        this.id = id;
-        this.text = text;
-    }
 
     @Override
     public String toString() {
@@ -30,7 +26,4 @@ public class Fortune {
         return text;
     }
 
-    public Fortune() {
-
-    }
 }
