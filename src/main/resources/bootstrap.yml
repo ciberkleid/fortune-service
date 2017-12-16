@@ -1,5 +1,5 @@
 server:
-  port: 8787
+  port: ${PORT:8787}
 spring:
   application:
     name: fortune-service

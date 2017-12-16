@@ -10,7 +10,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-#    database: MYSQL
+    database: MYSQL
 
 logging:
   level:
