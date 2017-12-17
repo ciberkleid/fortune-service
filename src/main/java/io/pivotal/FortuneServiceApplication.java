@@ -27,19 +27,19 @@ public class FortuneServiceApplication {
      *
      * Loads the database on startup
      *
-     * @param gr
+     * @param fortuneRepo
      * @return
      */
     @Bean
-    CommandLineRunner loadDatabase(FortuneRepository gr) {
+    CommandLineRunner loadDatabase(FortuneRepository fortuneRepo) {
         return args -> {
             logger.debug("loading database..");
-            gr.save(new Fortune(1L, "You learn from your mistakes... You will learn a lot today."));
-            gr.save(new Fortune(2L, "You can always find happiness at work on Friday."));
-            gr.save(new Fortune(3L, "You will be hungry again in one hour."));
-            gr.save(new Fortune(4L, "Today will be an awesome day!"));
-            logger.debug("record count: {}", gr.count());
-            gr.findAll().forEach(x -> logger.debug(x.toString()));
+            fortuneRepo.save(new Fortune(1L, "You learn from your mistakes... You will learn a lot today."));
+            fortuneRepo.save(new Fortune(2L, "You can always find happiness at work on Friday."));
+            fortuneRepo.save(new Fortune(3L, "You will be hungry again in one hour."));
+            fortuneRepo.save(new Fortune(4L, "Today will be an awesome day!"));
+            logger.debug("record count: {}", fortuneRepo.count());
+            fortuneRepo.findAll().forEach(x -> logger.debug(x.toString()));
         };
 
     }
