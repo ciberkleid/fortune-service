@@ -1,7 +1,6 @@
-
 CREATE TABLE fortune (
-    id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    text varchar(255) not null
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  text varchar(255) not null
 );
 
 INSERT INTO fortune (text) VALUES ('Do what works.');
@@ -17,6 +16,3 @@ INSERT INTO fortune (text) VALUES ('You can always find happiness at work on Fri
 INSERT INTO fortune (text) VALUES ('You will be hungry again in one hour.');
 
 INSERT INTO fortune (text) VALUES ('Today will be an awesome day!');
-
-
-

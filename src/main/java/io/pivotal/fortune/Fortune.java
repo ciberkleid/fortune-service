@@ -11,17 +11,6 @@ public class Fortune {
 
     private String text;
 
-    public Fortune(Long id, String text) {
-        super();
-        this.id = id;
-        this.text = text;
-    }
-
-    @Override
-    public String toString() {
-        return "Fortune [id=" + id + ", text=" + text + "]";
-    }
-
     public Long getId() {
         return id;
     }
@@ -30,7 +19,8 @@ public class Fortune {
         return text;
     }
 
-    public Fortune() {
-
+    @Override
+    public String toString() {
+        return "Fortune [id=" + id + ", text=" + text + "]";
     }
 }

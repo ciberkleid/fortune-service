@@ -1,6 +1,5 @@
 package io.pivotal;
 
-import io.pivotal.fortune.Fortune;
 import io.pivotal.fortune.FortuneRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,27 +22,20 @@ public class FortuneServiceApplication {
         SpringApplication.run(FortuneServiceApplication.class, args);
     }
 
-//    /**
-//     *
-//     * Loads the database on startup
-//     *
-//     * @param gr
-//     * @return
-//     */
-//    @Bean
-//    CommandLineRunner loadDatabase(FortuneRepository gr) {
-//        return args -> {
-//            logger.debug("loading database..");
-//            gr.save(new Fortune(1L, "You learn from your mistakes... You will learn a lot today."));
-//            gr.save(new Fortune(2L, "You can always find happiness at work on Friday."));
-//            gr.save(new Fortune(3L, "You will be hungry again in one hour."));
-//            gr.save(new Fortune(4L, "Today will be an awesome day!"));
-//            logger.debug("record count: {}", gr.count());
-//            gr.findAll().forEach(x -> logger.debug(x.toString()));
-//        };
-//
-//    }
+    /**
+     *
+     * Logs the database contents on startup
+     *
+     * @param fortuneRepo
+     * @return
+     */
+    @Bean
+    CommandLineRunner loadDatabase(FortuneRepository fortuneRepo) {
+        return args -> {
+            logger.info("Fortune Repo record count: {}", fortuneRepo.count());
+            fortuneRepo.findAll().forEach(x -> logger.debug(x.toString()));
+        };
+
+    }
 
 }
-
-
