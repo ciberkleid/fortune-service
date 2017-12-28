@@ -1,4 +1,3 @@
-
 package io.pivotal.fortune;
 
 import org.springframework.data.jpa.repository.JpaRepository;
