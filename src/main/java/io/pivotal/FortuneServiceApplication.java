@@ -34,10 +34,13 @@ public class FortuneServiceApplication {
     CommandLineRunner loadDatabase(FortuneRepository fortuneRepo) {
         return args -> {
             logger.debug("loading database..");
-            fortuneRepo.save(new Fortune(1L, "You learn from your mistakes... You will learn a lot today."));
-            fortuneRepo.save(new Fortune(2L, "You can always find happiness at work on Friday."));
-            fortuneRepo.save(new Fortune(3L, "You will be hungry again in one hour."));
-            fortuneRepo.save(new Fortune(4L, "Today will be an awesome day!"));
+            fortuneRepo.save(new Fortune(1L, "Do what works."));
+            fortuneRepo.save(new Fortune(2L, "Do the right thing."));
+            fortuneRepo.save(new Fortune(3L, "Always be kind."));
+            fortuneRepo.save(new Fortune(4L, "You learn from your mistakes... You will learn a lot today."));
+            fortuneRepo.save(new Fortune(5L, "You can always find happiness at work on Friday."));
+            fortuneRepo.save(new Fortune(6L, "You will be hungry again in one hour."));
+            fortuneRepo.save(new Fortune(7L, "Today will be an awesome day!"));
             logger.debug("record count: {}", fortuneRepo.count());
             fortuneRepo.findAll().forEach(x -> logger.debug(x.toString()));
         };
