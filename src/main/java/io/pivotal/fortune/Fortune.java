@@ -10,16 +10,14 @@ public class Fortune {
     private Long id;
 
     private String text;
-
+    
+    public Fortune() {
+    }
+    
     public Fortune(Long id, String text) {
         super();
         this.id = id;
         this.text = text;
-    }
-
-    @Override
-    public String toString() {
-        return "Fortune [id=" + id + ", text=" + text + "]";
     }
 
     public Long getId() {
@@ -29,8 +27,10 @@ public class Fortune {
     public String getText() {
         return text;
     }
-
-    public Fortune() {
-
+    
+    @Override
+    public String toString() {
+        return "Fortune [id=" + id + ", text=" + text + "]";
     }
+    
 }
