@@ -23,4 +23,5 @@ public class Fortune {
     public String toString() {
         return "Fortune [id=" + id + ", text=" + text + "]";
     }
+    
 }
