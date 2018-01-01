@@ -1,6 +1,6 @@
 package io.pivotal.fortune;
 
-import com.jayway.restassured.module.mockmvc.RestAssuredMockMvc;
+import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
 import org.mockito.BDDMockito;
 import org.mockito.Mockito;
