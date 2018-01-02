@@ -3,7 +3,6 @@ package io.pivotal.fortune;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
 import org.mockito.BDDMockito;
-import org.mockito.Mockito;
 
 public class BaseClass {
 
