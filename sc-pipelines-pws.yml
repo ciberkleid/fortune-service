@@ -34,10 +34,6 @@ test:
       broker: p-circuit-breaker-dashboard
       plan: standard
       useExisting: true
-    - type: stubrunner
-      name: stubrunner
-      coordinates: io.pivotal:cloudfoundry-stub-runner-boot:0.0.1.M1
-      manifestPath: sc-pipelines/manifest-stubrunner.yml
 stage:
   services:
     - name: fortune-db
