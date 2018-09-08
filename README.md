@@ -1,4 +1,4 @@
-# fortune-service
+# fortune-service application
 Returns fortunes in random sequence
 
 ### Option 1: Script for quick & easy direct deployment to Cloud Foundry:
