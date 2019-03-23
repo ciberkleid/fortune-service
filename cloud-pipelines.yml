@@ -8,54 +8,54 @@ test:
   services:
     - name: fortune-db
       type: broker
-      broker: cleardb
-      plan: spark
+      broker: p.mysql
+      plan: db-small
       useExisting: true
     - name: config-server
       type: broker
       broker: p-config-server
-      plan: trial
+      plan: standard
       params:
         git:
           uri: https://github.com/ciberkleid/app-config
       useExisting: true
-    - name: cloud-bus
+    - name: p.rabbitmq
       type: broker
-      broker: cloudamqp
+      broker: single-node-3.7
       plan: lemur
       useExisting: true
     - name: service-registry
       type: broker
       broker: p-service-registry
-      plan: trial
+      plan: standard
       useExisting: true
     - name: circuit-breaker-dashboard
       type: broker
       broker: p-circuit-breaker-dashboard
-      plan: trial
+      plan: standard
       useExisting: true
 stage:
   services:
     - name: fortune-db
       type: broker
-      broker: cleardb
-      plan: spark
+      broker: p.mysql
+      plan: db-small
     - name: config-server
       type: broker
       broker: p-config-server
-      plan: trial
+      plan: standard
       params:
         git:
           uri: https://github.com/ciberkleid/app-config
-    - name: cloud-bus
+    - name: p.rabbitmq
       type: broker
-      broker: cloudamqp
+      broker: single-node-3.7
       plan: lemur
     - name: service-registry
       type: broker
       broker: p-service-registry
-      plan: trial
+      plan: standard
     - name: circuit-breaker-dashboard
       type: broker
       broker: p-circuit-breaker-dashboard
-      plan: trial
+      plan: standard
