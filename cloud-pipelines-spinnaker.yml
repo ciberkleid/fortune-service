@@ -1,0 +1,32 @@
+---
+service_name: fortune-db
+service: p.mysql
+service_plan: db-small
+tags:
+- tag1
+---
+service_name: config-server
+service: p-config-server
+service_plan: standard
+tags:
+- tag1
+parameters: |
+  { "git": { "uri": "https://github.com/ciberkleid/app-config" } }
+---
+service_name: cloud-bus
+service: p.rabbitmq
+service_plan: single-node-3.7
+tags:
+- tag1
+---
+service_name: service-registry
+service: p-service-registry
+service_plan: standard
+tags:
+- tag1
+---
+service_name: circuit-breaker-dashboard
+service: p-circuit-breaker-dashboard
+service_plan: standard
+tags:
+- tag1
