@@ -1,0 +1,6 @@
+---
+service_name: service-registry
+service: p-service-registry
+service_plan: standard
+tags:
+- tag1

@@ -1,0 +1,8 @@
+---
+service_name: config-server
+service: p-config-server
+service_plan: standard
+tags:
+- tag1
+parameters: |
+  { "git": { "uri": "https://github.com/ciberkleid/app-config" } }

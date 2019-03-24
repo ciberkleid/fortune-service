@@ -1,0 +1,6 @@
+---
+service_name: circuit-breaker-dashboard
+service: p-circuit-breaker-dashboard
+service_plan: standard
+tags:
+- tag1
