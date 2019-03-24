@@ -1,5 +1,5 @@
 ---
-service_name: fortune-db
+name: fortune-db
 service: p.mysql
 service_plan: db-small
 tags:
