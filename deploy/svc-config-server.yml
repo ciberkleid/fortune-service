@@ -1,7 +1,7 @@
 ---
-service_name: config-server
+serviceInstanceName: config-server
 service: p-config-server
-service_plan: standard
+servicePlan: standard
 tags:
 - tag1
 parameters: |

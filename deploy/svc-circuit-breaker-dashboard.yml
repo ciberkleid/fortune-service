@@ -1,6 +1,6 @@
 ---
-service_name: circuit-breaker-dashboard
+serviceInstanceName: circuit-breaker-dashboard
 service: p-circuit-breaker-dashboard
-service_plan: standard
+servicePlan: standard
 tags:
 - tag1

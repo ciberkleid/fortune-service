@@ -1,6 +1,6 @@
 ---
-service_name: service-registry
+serviceInstanceName: service-registry
 service: p-service-registry
-service_plan: standard
+servicePlan: standard
 tags:
 - tag1

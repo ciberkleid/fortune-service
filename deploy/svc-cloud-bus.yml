@@ -1,6 +1,6 @@
 ---
-service_name: cloud-bus
+serviceInstanceName: cloud-bus
 service: p.rabbitmq
-service_plan: single-node-3.7
+servicePlan: single-node-3.7
 tags:
 - tag1
