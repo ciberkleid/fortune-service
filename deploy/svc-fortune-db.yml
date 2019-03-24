@@ -1,6 +1,6 @@
 ---
-name: fortune-db
+serviceInstanceName: fortune-db
 service: p.mysql
-service_plan: db-small
+servicePlan: db-small
 tags:
 - tag1
