@@ -4,3 +4,4 @@ service: p-rabbitmq
 servicePlan: standard
 tags:
 - tag1
+updateable: false

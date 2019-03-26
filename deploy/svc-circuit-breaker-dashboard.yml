@@ -4,3 +4,4 @@ service: p-circuit-breaker-dashboard
 servicePlan: standard
 tags:
 - tag1
+updateable: false

@@ -4,3 +4,4 @@ service: p.mysql
 servicePlan: db-small
 tags:
 - tag1
+updateable: false
