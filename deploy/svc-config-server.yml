@@ -6,4 +6,4 @@ parameters: |
   { "git": { "uri": "https://github.com/ciberkleid/app-config" } }
 tags:
 - tag1
-updateable: false
+updatable: false
