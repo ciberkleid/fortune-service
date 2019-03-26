@@ -1,0 +1,15 @@
+---
+applications:
+- name: fortune-service
+  timeout: 120
+  services:
+  - fortune-db
+  - config-server
+  - cloud-bus
+  - service-registry
+  - circuit-breaker-dashboard
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+    SPRING_PROFILES_ACTIVE: stage 
+  routes:
+  - route: fortune-service-cyi-stage.apps.atherton.cf-app.com
