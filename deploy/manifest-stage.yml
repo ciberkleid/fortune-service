@@ -10,6 +10,5 @@ applications:
   - circuit-breaker-dashboard
   env:
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
-    SPRING_PROFILES_ACTIVE: stage 
   routes:
   - route: fortune-service-cyi-stage.apps.atherton.cf-app.com
