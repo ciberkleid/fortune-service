@@ -1,0 +1,14 @@
+---
+applications:
+- name: fortune-service
+  timeout: 120
+  services:
+  - fortune-db
+  - config-server
+  - cloud-bus
+  - service-registry
+  - circuit-breaker-dashboard
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+  routes:
+  - route: fortune-service-cyi-rollback.apps.atherton.cf-app.com
