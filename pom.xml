@@ -78,7 +78,7 @@
     </dependency>
     <dependency>
       <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-core</artifactId>
+      <artifactId>flyway -core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
@@ -210,6 +210,7 @@
                 <classifier>stubs</classifier>
                 <version>${latest.production.version}</version>
               </contractDependency>
+              <contractsMode>REMOTE</contractsMode>
               <contractsPath>/</contractsPath>
               <baseClassForTests>io.pivotal.fortune.BaseClass</baseClassForTests>
               <basePackageForTests>io.pivotal.fortune.contracttests</basePackageForTests>
