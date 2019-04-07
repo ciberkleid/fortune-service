@@ -9,7 +9,7 @@ public class BaseClass {
     @Before
     public void setup() {
         FortuneService service = BDDMockito.mock(FortuneService.class);
-        BDDMockito.given(service.getFortune()).willReturn("foofoo fortune");
+        BDDMockito.given(service.getFortune()).willReturn("foo fortune");
         RestAssuredMockMvc.standaloneSetup(new FortuneController(service));
     }
 }

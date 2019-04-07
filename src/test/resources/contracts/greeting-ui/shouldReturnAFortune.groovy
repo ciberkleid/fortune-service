@@ -10,6 +10,6 @@ should return a fortune string
     }
     response {
         status 200
-        body "foofoo fortune"
+        body "foo fortune"
     }
 }
