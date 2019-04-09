@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SmokeTests.class,
+		properties = {"spring.application.name=fortune-service", "spring.cloud.discovery.enabled=false", "spring.cloud.service-registry.auto-registration.enabled=false", "eureka.client.enabled=false", "eureka.client.serviceUrl.registerWithEureka=false", "eureka.client.registerWithEureka=false", "eureka.client.fetchRegistry=false", "spring.cloud.circuit.breaker.enabled=false", "hystrix.stream.queue.enabled=false"},
         webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @EnableAutoConfiguration
 public class SmokeTests {
@@ -23,7 +24,7 @@ public class SmokeTests {
 	@Test
 	public void should_return_a_fortune() {
 		ResponseEntity<String> response = this.restTemplate
-				.getForEntity("https://" + this.applicationUrl + "/", String.class);
+				.getForEntity("http://" + this.applicationUrl + "/", String.class);
 
 		BDDAssertions.then(response.getStatusCodeValue()).isEqualTo(200);
 
