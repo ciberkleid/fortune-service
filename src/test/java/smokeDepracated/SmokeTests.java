@@ -1,4 +1,4 @@
-package smoke;
+package smokeDepracated;
 
 import org.assertj.core.api.BDDAssertions;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SmokeTests.class,
 		properties = {"spring.application.name=fortune-service", "spring.cloud.discovery.enabled=false", "spring.cloud.service-registry.auto-registration.enabled=false", "eureka.client.enabled=false", "eureka.client.serviceUrl.registerWithEureka=false", "eureka.client.registerWithEureka=false", "eureka.client.fetchRegistry=false", "spring.cloud.circuit.breaker.enabled=false", "hystrix.stream.queue.enabled=false"},
-        webEnvironment = SpringBootTest.WebEnvironment.NONE)
+		webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @EnableAutoConfiguration
 public class SmokeTests {
 
