@@ -27,12 +27,12 @@ public class E2eTests {
 	@Test
 	public void should_return_a_fortune() {
 		ResponseEntity<String> response = this.restTemplate
-				.getForEntity("http://" + this.applicationUrl.replace("fortune-service", "greeting-ui") + "/", String.class);
+				.getForEntity("http://" + this.applicationUrl + "/", String.class);
 
 		BDDAssertions.then(response.getStatusCodeValue()).isEqualTo(200);
 
-		// Filter out the known Hystrix fallback responses from both fortune and greeting
-		BDDAssertions.then(response.getBody()).doesNotContain("This fortune is no good. Try another.").doesNotContain("The fortuneteller will be back soon.");
+		// Filter out the known Hystrix fallback response
+		BDDAssertions.then(response.getBody()).doesNotContain("The fortuneteller will be back soon.");
 	}
 
 }
