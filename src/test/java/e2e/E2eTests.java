@@ -16,10 +16,6 @@ import org.springframework.web.client.RestTemplate;
 @EnableAutoConfiguration
 public class E2eTests {
 
-	// The app is running in CF but the tests are executed from Concourse worker,
-	// so the test will deduce the url to greeting-ui: it will assume the same host
-	// as fortune-service, and simply replace "fortune-service" with "greeting-ui" in the url
-
 	@Value("${application.url}") String applicationUrl;
 
 	RestTemplate restTemplate = new RestTemplate();
