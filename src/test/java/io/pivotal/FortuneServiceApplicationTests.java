@@ -26,7 +26,7 @@ public class FortuneServiceApplicationTests {
     @Test
     public void testDefaultSettings() throws Exception {
         assertThat(this.template.queryForObject("SELECT COUNT(*) FROM fortune",
-                Integer.class)).isEqualTo(8);
+                Integer.class)).isEqualTo(7);
     }
 
 }
