@@ -16,7 +16,7 @@ public class FortuneController {
 		this.fortuneService = fortuneService;
 	}
 
-	@RequestMapping({"/", "/fortune"})
+	@RequestMapping("/")
 	String getQuote(){
 		logger.debug("Fetching fortune");
 		return fortuneService.getFortune();

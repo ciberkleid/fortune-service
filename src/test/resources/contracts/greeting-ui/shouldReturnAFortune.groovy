@@ -6,7 +6,7 @@ should return a fortune string
 """)
     request {
         method GET()
-        url "/fortune"
+        url "/"
     }
     response {
         status 200
