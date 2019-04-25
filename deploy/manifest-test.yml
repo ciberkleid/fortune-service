@@ -1,0 +1,16 @@
+---
+applications:
+- name: fortune-service
+  timeout: 120
+  services:
+  - fortune-db
+  - config-server
+  - cloud-bus
+  - service-registry
+  - circuit-breaker-dashboard
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+    SPRING_AUTOCONFIGURE_EXCLUDE: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+    JPA_HIBERNATE_DDL-AUTO: validate
+  routes:
+  - route: fortune-service-cyi-test.apps.atherton.cf-app.com

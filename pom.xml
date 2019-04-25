@@ -5,7 +5,7 @@
 
   <groupId>io.pivotal</groupId>
   <artifactId>fortune-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>fortune-service</name>
@@ -95,16 +95,16 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>io.pivotal.spring.cloud</groupId>
-        <artifactId>spring-cloud-services-dependencies</artifactId>
-        <version>${spring-cloud-services.version}</version>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring-cloud.version}</version>
+        <groupId>io.pivotal.spring.cloud</groupId>
+        <artifactId>spring-cloud-services-dependencies</artifactId>
+        <version>${spring-cloud-services.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -119,10 +119,27 @@
   </distributionManagement>
 
   <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build-info</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+        <configuration>
+          <gitDescribe>
+            <dirty>false</dirty>
+          </gitDescribe>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -144,7 +161,6 @@
                 <include>**/*Test.java</include>
               </includes>
               <excludes>
-                <exclude>**/smoke/**</exclude>
                 <exclude>**/e2e/**</exclude>
               </excludes>
             </configuration>
@@ -193,26 +209,10 @@
                 <classifier>stubs</classifier>
                 <version>${latest.production.version}</version>
               </contractDependency>
+              <contractsMode>REMOTE</contractsMode>
               <contractsPath>/</contractsPath>
               <baseClassForTests>io.pivotal.fortune.BaseClass</baseClassForTests>
               <basePackageForTests>io.pivotal.fortune.contracttests</basePackageForTests>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>smoke</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-              <includes>
-                <include>smoke/**/*Tests.java</include>
-                <include>smoke/**/*Test.java</include>
-              </includes>
             </configuration>
           </plugin>
         </plugins>

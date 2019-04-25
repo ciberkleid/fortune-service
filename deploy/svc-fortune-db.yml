@@ -1,0 +1,7 @@
+---
+serviceInstanceName: fortune-db
+service: p.mysql
+servicePlan: db-small
+tags:
+- tag1
+updatable: false

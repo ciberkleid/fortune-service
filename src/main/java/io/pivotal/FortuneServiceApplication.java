@@ -30,7 +30,7 @@ public class FortuneServiceApplication {
      * @return
      */
     @Bean
-    CommandLineRunner loadDatabase(FortuneRepository fortuneRepo) {
+    CommandLineRunner logDatabase(FortuneRepository fortuneRepo) {
         return args -> {
             logger.info("Fortune Repo record count: {}", fortuneRepo.count());
             fortuneRepo.findAll().forEach(x -> logger.debug(x.toString()));
