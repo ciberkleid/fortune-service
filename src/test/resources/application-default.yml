@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: fortune-service
+  cloud:
+    service-registry:
+      auto-registration:
+        enabled: false
+    discovery:
+      enabled: false
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    enabled: false
+
+hystrix:
+  stream:
+    queue:
+      enabled: false
+
+
+
