@@ -27,6 +27,7 @@
     <spring-cloud-contract.version>2.0.2.RELEASE</spring-cloud-contract.version>
     <distribution.management.release.id>bintray</distribution.management.release.id>
     <distribution.management.release.url>https://api.bintray.com/maven/ciberkleid/maven-repo/fortune-service</distribution.management.release.url>
+    <contracts.mode>REMOTE</contracts.mode>
   </properties>
 
   <dependencies>
@@ -209,7 +210,7 @@
                 <classifier>stubs</classifier>
                 <version>${latest.production.version}</version>
               </contractDependency>
-              <contractsMode>REMOTE</contractsMode>
+              <contractsMode>${contracts.mode}</contractsMode>
               <contractsPath>/</contractsPath>
               <baseClassForTests>io.pivotal.fortune.BaseClass</baseClassForTests>
               <basePackageForTests>io.pivotal.fortune.contracttests</basePackageForTests>
