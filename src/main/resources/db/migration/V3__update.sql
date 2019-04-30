@@ -1,0 +1,1 @@
+DELETE FROM fortune WHERE text='You will be hungry again in one hour.';
