@@ -1,0 +1,14 @@
+---
+applications:
+- name: fortune-service
+  timeout: 120
+  path: ./target/fortune-service-0.0.1-SNAPSHOT.jar
+  no-route: true
+  services:
+  - fortune-db
+  - config-server
+  - cloud-bus
+  - service-registry
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+    SPRING_PROFILES_ACTIVE: c2c

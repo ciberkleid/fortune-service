@@ -4,10 +4,10 @@ applications:
   timeout: 120
   path: ./target/fortune-service-0.0.1-SNAPSHOT.jar
   services:
-  - fortune-db
+#  - fortune-db
   - config-server
-  - cloud-bus
-  - circuit-breaker-dashboard
+#  - cloud-bus
+#  - circuit-breaker-dashboard
   routes:
   - route: fortune-service.apps.internal
   env:
